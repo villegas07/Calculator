@@ -1,4 +1,5 @@
-import type { Calculation, CalculationPrimitives } from '../../domain/entities/calculation.entity.js';
+import  { Calculation } from '../../domain/entities/calculation.entity.js';
+import type { CalculationPrimitives } from '../../domain/entities/calculation.entity.js';
 import { HistoryEntry } from '../../domain/entities/history-entry.entity.js';
 import { Operand } from '../../domain/value-objects/operand.value-object.js';
 import { Operation } from '../../domain/value-objects/operation.value-object.js';
