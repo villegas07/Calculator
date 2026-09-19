@@ -1,6 +1,5 @@
 import { Operand } from '../value-objects/operand.value-object.js';
 import { Result } from '../value-objects/result.value-object.js';
-import { DivisionByZeroError } from '../errors/division-by-zero.error.js';
 import { InvalidSquareRootError } from '../errors/invalid-square-root.error.js';
 
 export class CalculatorService {
@@ -17,9 +16,6 @@ export class CalculatorService {
     }
 
     divide(a: Operand, b: Operand): Result {
-        if (b.getValue() === 0) {
-            throw new DivisionByZeroError();
-        }
         return Result.create(a.getValue() / b.getValue());
     }
 

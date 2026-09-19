@@ -5,7 +5,7 @@ export class Operand {
 
     static create(value: number): Operand {
         if (!Number.isFinite(value)) {
-            throw new InvalidOperationError('El operador "${value}" no es un número válido');
+            throw new InvalidOperationError(`El operador "${value}" no es un número válido`);
         }
         return new Operand(value);
     }

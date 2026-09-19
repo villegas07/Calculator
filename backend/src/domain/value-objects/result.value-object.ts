@@ -5,7 +5,7 @@ export class Result {
 
     static create(value: number): Result {
         if (!Number.isFinite(value)) {
-            throw new InvalidOperationError('El resiltado calculado no es un número válido');
+            throw new InvalidOperationError('El resultado calculado no es un número válido');
         }
         return new Result(value);
     }

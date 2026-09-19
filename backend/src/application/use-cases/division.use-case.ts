@@ -4,6 +4,7 @@ import { Operation } from '../../domain/value-objects/operation.value-object.js'
 import { OperationType } from '../../domain/value-objects/operation.value-object.js';
 import type { CalculationPrimitives } from '../../domain/entities/calculation.entity.js';
 import { CalculationRecorder } from '../shared/calculation-recorder.js';
+import { DivisionByZeroError } from '../../domain/errors/division-by-zero.error.js';
 
 export class DivisionUseCase {
     constructor(
@@ -14,8 +15,16 @@ export class DivisionUseCase {
     async execute(dividend: number, divisor: number): Promise<CalculationPrimitives> {
         const a = Operand.create(dividend);
         const b = Operand.create(divisor);
+        this.ensureDivisorIsNotZero(b);
+
         const result = this.calculatorService.divide(a, b);
         const operation = Operation.create(OperationType.DIVISION);
         return this.recorder.record(operation, [a, b], result);
+    }
+
+    private ensureDivisorIsNotZero(divisor: Operand): void {
+        if (divisor.getValue() === 0) {
+            throw new DivisionByZeroError();
+        }
     }
 }

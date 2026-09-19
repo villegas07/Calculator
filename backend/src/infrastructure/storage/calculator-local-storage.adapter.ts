@@ -66,6 +66,6 @@ export class CalculatorLocalStorageAdapter implements CalculatorStoragePort {
             result,
             new Date(primitive.calculation.performedAt),
         );
-        return HistoryEntry.restore(primitive.id, calculation, new Date(primitive.recordedAt));
+        return HistoryEntry.restore(primitive.id, calculation, new Date(primitive.createdAt));
     }
 }
