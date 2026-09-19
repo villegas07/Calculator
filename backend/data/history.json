@@ -1,0 +1,31 @@
+[
+  {
+    "id": "3681cd1d-aff5-4009-a0f3-c8b0416afae1",
+    "calculation": {
+      "id": "600a929c-639b-4636-b85c-be3f57690401",
+      "operation": "ADDITION",
+      "symbol": "+",
+      "operands": [
+        5,
+        5
+      ],
+      "result": 10,
+      "performedAt": "2026-09-19T16:44:06.974Z"
+    },
+    "createdAt": "2026-09-19T16:44:06.974Z"
+  },
+  {
+    "id": "044f2ae2-0ad7-4c80-97d1-4b331df9bc28",
+    "calculation": {
+      "id": "d973d951-4de3-4b6b-bdf1-fb23189bce0d",
+      "operation": "SQUARE_ROOT",
+      "symbol": "√",
+      "operands": [
+        25
+      ],
+      "result": 5,
+      "performedAt": "2026-09-19T16:44:25.227Z"
+    },
+    "createdAt": "2026-09-19T16:44:25.227Z"
+  }
+]
